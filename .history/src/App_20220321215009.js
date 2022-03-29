@@ -1,0 +1,27 @@
+import React, { Component } from 'react'
+import { Row, Col } from 'antd';
+import {Route,Redirect} from 'react-router-dom'
+import Header from './components/Header'
+import Nav from './components/Nav'
+import Table1 from './pages/Table1'
+import Table2 from './pages/Table2'
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header/>
+        <Row>
+          <Col span={4}>
+            <Nav/>
+          </Col>
+          <Col span={20}>
+            <Route path="/Table1" component={Table1}/>
+            <Route path="/Table2" component={Table2}/>
+            <Redirect to="/Table1"/>
+          </Col> 
+        </Row>
+      </div>
+    )
+  }
+}
